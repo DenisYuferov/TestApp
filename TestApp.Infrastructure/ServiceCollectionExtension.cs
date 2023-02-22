@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using TestApp.Infrastructure.Context;
+using TestApp.Infrastructure.DbContexts;
 using TestApp.Infrastructure.Options;
 using TestApp.Infrastructure.Repositories;
 using TestApp.Infrastructure.Repositories.Abstractions;

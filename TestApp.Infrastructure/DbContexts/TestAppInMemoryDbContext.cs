@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TestApp.Infrastructure.Entities;
 
-namespace TestApp.Infrastructure.Context
+namespace TestApp.Infrastructure.DbContexts
 {
     public class TestAppInMemoryDbContext : DbContext
     {
@@ -32,7 +32,7 @@ namespace TestApp.Infrastructure.Context
                       .WithOne(b => b.Author)
                       .OnDelete(DeleteBehavior.Cascade);
             });
-            
+
             modelBuilder.Entity<Book>(entity =>
             {
                 entity.HasKey(b => b.Id);

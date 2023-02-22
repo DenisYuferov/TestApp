@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TestApp.Infrastructure.Context;
+using TestApp.Infrastructure.DbContexts;
 using TestApp.Infrastructure.Entities;
 using TestApp.Infrastructure.Repositories.Abstractions;
 
