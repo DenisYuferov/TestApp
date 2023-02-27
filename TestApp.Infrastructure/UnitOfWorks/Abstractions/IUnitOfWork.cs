@@ -6,6 +6,6 @@ namespace TestApp.Infrastructure.UnitOfWorks.Abstractions
     {
         IAuthorRepository AuthorRepository { get; }
         IBookRepository BookRepository { get; }
-        Task SaveAsync();
+        ValueTask SaveAsync();
     }
 }

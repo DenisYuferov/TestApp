@@ -7,7 +7,7 @@ namespace TestApp.Infrastructure.Repositories
 {
     public class AuthorRepository : RepositoryBase<Author, int>, IAuthorRepository
     {
-        public AuthorRepository(TestAppInMemoryDbContext context) : base(context)
+        public AuthorRepository(PostgreDbContext context) : base(context)
         {
 
         }

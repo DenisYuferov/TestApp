@@ -7,7 +7,7 @@ using TestApp.Domain.Validators;
 
 namespace TestApp.Domain
 {
-    public static class ServiceCollectionExtension
+    public static class ServiceCollectionExtensions
     {
         public static void AddTestAppDomain(this IServiceCollection services)
         {

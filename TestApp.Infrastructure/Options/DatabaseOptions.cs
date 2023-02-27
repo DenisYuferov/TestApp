@@ -4,6 +4,7 @@
     {
         public const string Database = "Database";
 
-        public string? Name { get; set; }
+        public bool? InMemory { get; set; }
+        public string? Connection { get; set; }
     }
 }

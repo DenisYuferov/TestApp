@@ -7,7 +7,7 @@ namespace TestApp.Infrastructure.Repositories
 {
     public class BookRepository : RepositoryBase<Book, int>, IBookRepository
     {
-        public BookRepository(TestAppInMemoryDbContext context) : base(context)
+        public BookRepository(PostgreDbContext context) : base(context)
         {
 
         }

@@ -3,12 +3,13 @@ using TestApp.Infrastructure.Entities;
 
 namespace TestApp.Infrastructure.DbContexts
 {
-    public class TestAppInMemoryDbContext : DbContext
+    // Add-Migration Initial -StartupProject TestApp.WebApi -Project TestApp.Infrastructure
+    public class PostgreDbContext : DbContext
     {
         public DbSet<Author> Authors { get; set; }
         public DbSet<Book> Books { get; set; }
 
-        public TestAppInMemoryDbContext(DbContextOptions<TestAppInMemoryDbContext> options)
+        public PostgreDbContext(DbContextOptions<PostgreDbContext> options)
             : base(options)
         {
 
@@ -16,7 +17,7 @@ namespace TestApp.Infrastructure.DbContexts
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            // optionsBuilder.UseInMemoryDatabase(databaseName: "databaseName");
+            
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -43,6 +44,14 @@ namespace TestApp.Infrastructure.DbContexts
                       .WithMany(a => a.Books)
                       .HasForeignKey(b => b.AuthorId);
             });
+
+            modelBuilder.Entity<Author>()
+                .HasData(new Author { Id = 1, Age = 30, FirstName = "Ivan", LastName = "Ivanov", Phone = "+7-987-654-32-10" });
+
+            modelBuilder.Entity<Book>()
+                .HasData(new Book { Id = 1, AuthorId = 1, Title = "Test Book", Description = "It`s a very simple book", Cost = 100 });
+            modelBuilder.Entity<Book>()
+                .HasData(new Book { Id = 2, AuthorId = 1, Title = "Test Book2", Description = "It`s a very simple book 2", Cost = 200 });
         }
     }
 }

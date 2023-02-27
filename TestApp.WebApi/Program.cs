@@ -1,5 +1,6 @@
 using TestApp.Domain;
 using TestApp.Infrastructure;
+using TestApp.Infrastructure.DbContexts;
 
 namespace TestApp.WebApi
 {
@@ -22,6 +23,8 @@ namespace TestApp.WebApi
             builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
+
+            app.UseTestAppInfrastructure();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
