@@ -12,12 +12,12 @@ namespace TestApp.Infrastructure
 {
     public static class ServiceCollectionExtensions
     {
-        public static void AddTestAppInfrastructure(this IServiceCollection services, ConfigurationManager configuration)
+        public static void AddTestAppInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             var databaseOptions = ConfigureDatabaseOptions(services, configuration);
             if (databaseOptions?.InMemory == true)
             {
-                ConfigureInMemoryDatabase(databaseOptions, services);
+                ConfigureInMemoryDatabase(services, databaseOptions);
             }
             else
             {
@@ -30,7 +30,7 @@ namespace TestApp.Infrastructure
             services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
 
-        private static DatabaseOptions? ConfigureDatabaseOptions(IServiceCollection services, ConfigurationManager configuration)
+        private static DatabaseOptions? ConfigureDatabaseOptions(IServiceCollection services, IConfiguration configuration)
         {
             var databaseSection = configuration.GetSection(DatabaseOptions.Database);
             services.Configure<DatabaseOptions>(databaseSection);
@@ -40,7 +40,7 @@ namespace TestApp.Infrastructure
             return databaseOptions;
         }
 
-        private static void ConfigureInMemoryDatabase(DatabaseOptions databaseOptions, IServiceCollection services)
+        private static void ConfigureInMemoryDatabase(IServiceCollection services, DatabaseOptions databaseOptions)
         {
             var dbName = databaseOptions?.Connection?
                 .Split(";").First(cp => cp.Contains(DatabaseOptions.Database))

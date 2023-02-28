@@ -8,7 +8,7 @@ namespace TestApp.WebApi
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
+            
             // Add services to the container.
             builder.Services.AddTestAppInfrastructure(builder.Configuration);
             builder.Services.AddTestAppDomain();
@@ -25,7 +25,7 @@ namespace TestApp.WebApi
 
             var app = builder.Build();
 
-            app.UseTestAppInfrastructure();
+            app.Services.UseTestAppInfrastructure(app.Configuration);
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
