@@ -27,7 +27,7 @@
       "applicationUrl": "https://localhost:4002",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "Database__InMemory": "false",
+        "Database__InMemory": "true",
         "Database__Connection": "Host=localhost;Port=5432;Database=TestApp;Username=postgres;Password=postgres"
       }
     },

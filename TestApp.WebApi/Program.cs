@@ -1,6 +1,5 @@
 using TestApp.Domain;
 using TestApp.Infrastructure;
-using TestApp.Infrastructure.DbContexts;
 
 namespace TestApp.WebApi
 {
@@ -22,6 +21,8 @@ namespace TestApp.WebApi
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddHealthChecks();
+
             var app = builder.Build();
 
             app.UseTestAppInfrastructure();
@@ -38,6 +39,8 @@ namespace TestApp.WebApi
             app.UseAuthorization();
 
             app.MapControllers();
+
+            app.UseHealthChecks("/health");
 
             app.Run();
         }
