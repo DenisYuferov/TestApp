@@ -1,10 +1,12 @@
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TestApp.Domain.Commands.Authors;
 using TestApp.Domain.Queries.Authors;
 
 namespace TestApp.WebApi.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/v1/[controller]")]
     public class AuthorsController : ControllerBase
@@ -25,6 +27,7 @@ namespace TestApp.WebApi.Controllers
             return Ok(result);
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult> GetAll(CancellationToken cancellation)
         {

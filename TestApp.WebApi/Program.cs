@@ -9,7 +9,6 @@ namespace TestApp.WebApi
         {
             var builder = WebApplication.CreateBuilder(args);
             
-            // Add services to the container.
             builder.Services.AddTestAppInfrastructure(builder.Configuration);
             builder.Services.AddTestAppDomain();
 
@@ -17,9 +16,8 @@ namespace TestApp.WebApi
 
             builder.Services.AddControllers();
 
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwagger();
 
             builder.Services.AddHealthChecks();
 
@@ -27,7 +25,6 @@ namespace TestApp.WebApi
 
             app.Services.UseTestAppInfrastructure(app.Configuration);
 
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
@@ -36,6 +33,7 @@ namespace TestApp.WebApi
 
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllers();

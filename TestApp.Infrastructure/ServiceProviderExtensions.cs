@@ -11,13 +11,27 @@ namespace TestApp.WebApi
         public static void UseTestAppInfrastructure(this IServiceProvider serviceProvider, IConfiguration configuration)
         {
             var databaseOptions = configuration.GetSection(DatabaseOptions.Database).Get<DatabaseOptions>();
-            if (databaseOptions?.InMemory != true)
+                
+            using (var serviceScope = serviceProvider.CreateScope())
             {
-                using (var serviceScope = serviceProvider.CreateScope())
+                var context = serviceScope.ServiceProvider.GetService<PostgreDbContext>();
+
+                if (databaseOptions?.InMemory == true)
                 {
-                    var context = serviceScope.ServiceProvider.GetService<PostgreDbContext>();
+                    var seedModel = context?.GetSeedModel();
+
+                    context?.Books.Add(seedModel?.Books?[0]!);
+                    context?.Books.Add(seedModel?.Books?[1]!);
+
+                    context?.Authors.Add(seedModel?.Author!);
+
+                    context?.SaveChanges();
+                }
+                else
+                {
                     context?.Database.Migrate();
                 }
+                    
             }
         }
     }

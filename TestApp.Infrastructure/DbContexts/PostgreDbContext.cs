@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TestApp.Infrastructure.Entities;
+using TestApp.Infrastructure.Seeds;
 
 namespace TestApp.Infrastructure.DbContexts
 {
@@ -45,13 +46,27 @@ namespace TestApp.Infrastructure.DbContexts
                       .HasForeignKey(b => b.AuthorId);
             });
 
-            modelBuilder.Entity<Author>()
-                .HasData(new Author { Id = 1, Age = 30, FirstName = "Ivan", LastName = "Ivanov", Phone = "+7-987-654-32-10" });
+            var seedModel = GetSeedModel();
 
-            modelBuilder.Entity<Book>()
-                .HasData(new Book { Id = 1, AuthorId = 1, Title = "Test Book", Description = "It`s a very simple book", Cost = 100 });
-            modelBuilder.Entity<Book>()
-                .HasData(new Book { Id = 2, AuthorId = 1, Title = "Test Book2", Description = "It`s a very simple book 2", Cost = 200 });
+            modelBuilder.Entity<Author>().HasData(seedModel.Author!);
+
+            modelBuilder.Entity<Book>().HasData(seedModel.Books?[0]!);
+            modelBuilder.Entity<Book>().HasData(seedModel.Books?[1]!);
+        }
+
+        public SeedModel GetSeedModel()
+        {
+            var model = new SeedModel
+            {
+                Author = new Author { Id = 1, Age = 30, FirstName = "Ivan", LastName = "Ivanov", Phone = "+7-987-654-32-10" },
+                Books = new List<Book> 
+                {
+                    new Book { Id = 1, AuthorId = 1, Title = "Test Book", Description = "It`s a very simple book", Cost = 100 },
+                    new Book { Id = 2, AuthorId = 1, Title = "Test Book2", Description = "It`s a very simple book 2", Cost = 200 }
+                }
+            };
+
+            return model;
         }
     }
 }
