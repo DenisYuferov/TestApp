@@ -32,7 +32,7 @@
         "Jwt__Issuer": "TestAuth.WebApi",
         "Jwt__Audience": "TestApps",
         //
-        "Database__InMemory": "true",
+        "Database__InMemory": "false",
         "Database__Connection": "Host=localhost;Port=5432;Database=TestApp;Username=postgres;Password=postgres"
       }
     },

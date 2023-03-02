@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
 using MediatR;
-using TestApp.Domain.Commands.Books;
-using TestApp.Domain.Models.Books;
-using TestApp.Infrastructure.Entities;
-using TestApp.Infrastructure.UnitOfWorks.Abstractions;
+using TestApp.Domain.Abstraction.UnitOfWorks;
+using TestApp.Domain.Model.Commands.Books;
+using TestApp.Domain.Model.Entities;
+using TestApp.Domain.Model.Views.Books;
 
 namespace TestApp.Domain.Handlers.Books
 {
-    public class AddBookCommandHandler : IRequestHandler<AddBookCommand, AddBookModel>
+    public class AddBookCommandHandler : IRequestHandler<AddBookCommand, AddBookView>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -19,7 +19,7 @@ namespace TestApp.Domain.Handlers.Books
             _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
-        public async Task<AddBookModel> Handle(AddBookCommand request, CancellationToken cancellation)
+        public async Task<AddBookView> Handle(AddBookCommand request, CancellationToken cancellation)
         {
             var book = _mapper.Map<Book>(request);
 
@@ -27,7 +27,7 @@ namespace TestApp.Domain.Handlers.Books
 
             await _unitOfWork.SaveAsync();
 
-            return _mapper.Map<AddBookModel>(entity);
+            return _mapper.Map<AddBookView>(entity);
         }
     }
 }

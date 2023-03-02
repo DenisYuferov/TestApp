@@ -5,12 +5,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
+using TestApp.Domain.Abstraction.Repositories;
+using TestApp.Domain.Abstraction.UnitOfWorks;
+using TestApp.Domain.Model.Options;
 using TestApp.Infrastructure.DbContexts;
-using TestApp.Infrastructure.Options;
 using TestApp.Infrastructure.Repositories;
-using TestApp.Infrastructure.Repositories.Abstractions;
 using TestApp.Infrastructure.UnitOfWorks;
-using TestApp.Infrastructure.UnitOfWorks.Abstractions;
 
 namespace TestApp.Infrastructure
 {

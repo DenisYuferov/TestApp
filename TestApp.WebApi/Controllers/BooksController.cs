@@ -1,7 +1,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using TestApp.Domain.Commands.Books;
-using TestApp.Domain.Queries.Books;
+using TestApp.Domain.Model.Commands.Books;
+using TestApp.Domain.Model.Queries.Books;
 
 namespace TestApp.WebApi.Controllers
 {

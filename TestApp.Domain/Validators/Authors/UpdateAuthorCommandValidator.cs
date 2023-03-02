@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using TestApp.Domain.Commands.Authors;
+using TestApp.Domain.Model.Commands.Authors;
 
 namespace TestApp.Domain.Validators.Authors
 {

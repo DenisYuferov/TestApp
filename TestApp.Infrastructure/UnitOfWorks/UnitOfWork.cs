@@ -1,6 +1,6 @@
-﻿using TestApp.Infrastructure.DbContexts;
-using TestApp.Infrastructure.Repositories.Abstractions;
-using TestApp.Infrastructure.UnitOfWorks.Abstractions;
+﻿using TestApp.Domain.Abstraction.Repositories;
+using TestApp.Domain.Abstraction.UnitOfWorks;
+using TestApp.Infrastructure.DbContexts;
 
 namespace TestApp.Infrastructure.UnitOfWorks
 {

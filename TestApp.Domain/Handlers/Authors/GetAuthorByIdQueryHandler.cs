@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
 using MediatR;
-using TestApp.Domain.Models.Authors;
-using TestApp.Domain.Queries.Authors;
-using TestApp.Infrastructure.UnitOfWorks.Abstractions;
+using TestApp.Domain.Abstraction.UnitOfWorks;
+using TestApp.Domain.Model.Queries.Authors;
+using TestApp.Domain.Model.Views.Authors;
 
 namespace TestApp.Domain.Handlers.Authors
 {
-    public class GetAuthorByIdQueryHandler : IRequestHandler<GetAuthorByIdQuery, GetAuthorWithBooksModel>
+    public class GetAuthorByIdQueryHandler : IRequestHandler<GetAuthorByIdQuery, GetAuthorWithBooksView>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -18,11 +18,11 @@ namespace TestApp.Domain.Handlers.Authors
             _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
-        public async Task<GetAuthorWithBooksModel> Handle(GetAuthorByIdQuery request, CancellationToken cancellation)
+        public async Task<GetAuthorWithBooksView> Handle(GetAuthorByIdQuery request, CancellationToken cancellation)
         {
             var author = await _unitOfWork.AuthorRepository.GetByIdAsync(request.Id, cancellation);
 
-            return _mapper.Map<GetAuthorWithBooksModel>(author);
+            return _mapper.Map<GetAuthorWithBooksView>(author);
         }
     }
 }

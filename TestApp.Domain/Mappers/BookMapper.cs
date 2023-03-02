@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using TestApp.Domain.Commands.Books;
-using TestApp.Domain.Models.Books;
-using TestApp.Infrastructure.Entities;
+using TestApp.Domain.Model.Commands.Books;
+using TestApp.Domain.Model.Entities;
+using TestApp.Domain.Model.Views.Books;
 
 namespace TestApp.Domain.Mappers
 {
@@ -13,9 +13,9 @@ namespace TestApp.Domain.Mappers
             CreateMap<UpdateBookCommand, Book>();
             CreateMap<DeleteBookCommand, Book>();
 
-            CreateMap<Book, AddBookModel>();
-            CreateMap<Book, GetBookModel>();
-            CreateMap<Book, GetBookWithAuthorModel>()
+            CreateMap<Book, AddBookView>();
+            CreateMap<Book, GetBookView>();
+            CreateMap<Book, GetBookWithAuthorView>()
                 .ForMember(dest => dest.AuthorFullName, opt => opt.MapFrom(book => $"{book.Author!.FirstName} {book.Author.LastName}"));
         }
     }

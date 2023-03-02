@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
 using MediatR;
-using TestApp.Domain.Models.Authors;
-using TestApp.Domain.Queries.Authors;
-using TestApp.Infrastructure.UnitOfWorks.Abstractions;
+using TestApp.Domain.Abstraction.UnitOfWorks;
+using TestApp.Domain.Model.Queries.Authors;
+using TestApp.Domain.Model.Views.Authors;
 
 namespace TestApp.Domain.Handlers.Authors
 {
-    public class GetAuthorsQueryHandler : IRequestHandler<GetAuthorsQuery, List<GetAuthorModel>>
+    public class GetAuthorsQueryHandler : IRequestHandler<GetAuthorsQuery, List<GetAuthorView>>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -18,11 +18,11 @@ namespace TestApp.Domain.Handlers.Authors
             _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
             _mapper = mapper;
         }
-        public async Task<List<GetAuthorModel>> Handle(GetAuthorsQuery request, CancellationToken cancellation)
+        public async Task<List<GetAuthorView>> Handle(GetAuthorsQuery request, CancellationToken cancellation)
         {
             var authors = await _unitOfWork.AuthorRepository.AllAsync(null, cancellation);
 
-            return _mapper.Map<List<GetAuthorModel>>(authors);
+            return _mapper.Map<List<GetAuthorView>>(authors);
         }
     }
 }

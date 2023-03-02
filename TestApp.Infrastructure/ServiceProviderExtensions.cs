@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TestApp.Domain.Model.Options;
 using TestApp.Infrastructure.DbContexts;
-using TestApp.Infrastructure.Options;
 
 namespace TestApp.WebApi
 {
@@ -31,7 +31,6 @@ namespace TestApp.WebApi
                 {
                     context?.Database.Migrate();
                 }
-                    
             }
         }
     }

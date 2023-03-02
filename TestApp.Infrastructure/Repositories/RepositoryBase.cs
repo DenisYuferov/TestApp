@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
-using TestApp.Infrastructure.Entities.Abstractions;
-using TestApp.Infrastructure.Repositories.Abstractions;
+using TestApp.Domain.Abstraction.Repositories;
+using TestApp.Domain.Model.Abstraction.Entities;
 
 namespace TestApp.Infrastructure.Repositories
 {

@@ -1,6 +1,6 @@
 ﻿using MediatR;
-using TestApp.Domain.Commands.Books;
-using TestApp.Infrastructure.UnitOfWorks.Abstractions;
+using TestApp.Domain.Abstraction.UnitOfWorks;
+using TestApp.Domain.Model.Commands.Books;
 
 namespace TestApp.Domain.Handlers.Books
 {

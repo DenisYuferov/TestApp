@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using TestApp.Domain.Abstraction.Repositories;
+using TestApp.Domain.Model.Entities;
 using TestApp.Infrastructure.DbContexts;
-using TestApp.Infrastructure.Entities;
-using TestApp.Infrastructure.Repositories.Abstractions;
 
 namespace TestApp.Infrastructure.Repositories
 {

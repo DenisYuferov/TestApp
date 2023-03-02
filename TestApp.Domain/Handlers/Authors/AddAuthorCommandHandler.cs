@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
 using MediatR;
-using TestApp.Domain.Commands.Authors;
-using TestApp.Domain.Models.Authors;
-using TestApp.Infrastructure.Entities;
-using TestApp.Infrastructure.UnitOfWorks.Abstractions;
+using TestApp.Domain.Abstraction.UnitOfWorks;
+using TestApp.Domain.Model.Commands.Authors;
+using TestApp.Domain.Model.Entities;
+using TestApp.Domain.Model.Views.Authors;
 
 namespace TestApp.Domain.Handlers.Authors
 {
-    public class AddAuthorCommandHandler : IRequestHandler<AddAuthorCommand, AddAuthorModel>
+    public class AddAuthorCommandHandler : IRequestHandler<AddAuthorCommand, AddAuthorView>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -19,7 +19,7 @@ namespace TestApp.Domain.Handlers.Authors
             _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
-        public async Task<AddAuthorModel> Handle(AddAuthorCommand request, CancellationToken cancellation)
+        public async Task<AddAuthorView> Handle(AddAuthorCommand request, CancellationToken cancellation)
         {
             var author = _mapper.Map<Author>(request);
 
@@ -27,7 +27,7 @@ namespace TestApp.Domain.Handlers.Authors
 
             await _unitOfWork.SaveAsync();
 
-            return _mapper.Map<AddAuthorModel>(entity);
+            return _mapper.Map<AddAuthorView>(entity);
         }
     }
 }

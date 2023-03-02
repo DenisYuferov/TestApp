@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TestApp.Infrastructure.Entities;
-using TestApp.Infrastructure.Seeds;
+using TestApp.Domain.Model.Entities;
+using TestApp.Domain.Model.Seeds;
 
 namespace TestApp.Infrastructure.DbContexts
 {

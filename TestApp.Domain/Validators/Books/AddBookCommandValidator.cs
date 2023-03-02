@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using TestApp.Domain.Commands.Books;
+using TestApp.Domain.Model.Commands.Books;
 
 namespace TestApp.Domain.Validators.Books
 {

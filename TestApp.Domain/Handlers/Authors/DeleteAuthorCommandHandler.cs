@@ -1,6 +1,6 @@
 ﻿using MediatR;
-using TestApp.Domain.Commands.Authors;
-using TestApp.Infrastructure.UnitOfWorks.Abstractions;
+using TestApp.Domain.Abstraction.UnitOfWorks;
+using TestApp.Domain.Model.Commands.Authors;
 
 namespace TestApp.Domain.Handlers.Authors
 {
