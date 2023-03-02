@@ -1,10 +1,12 @@
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TestApp.Domain.Model.Commands.Books;
 using TestApp.Domain.Model.Queries.Books;
 
 namespace TestApp.WebApi.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/v1/[controller]")]
     public class BooksController : ControllerBase
