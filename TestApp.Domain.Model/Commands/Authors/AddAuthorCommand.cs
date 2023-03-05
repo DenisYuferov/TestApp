@@ -1,9 +1,9 @@
 ﻿using MediatR;
-using TestApp.Domain.Model.Views.Authors;
+using TestApp.Domain.Model.Dtos.Authors;
 
 namespace TestApp.Domain.Model.Commands.Authors
 {
-    public class AddAuthorCommand : IRequest<AddAuthorView>
+    public class AddAuthorCommand : IRequest<AddAuthorDto>
     {
         public int Age { get; set; }
         public string? FirstName { get; set; }

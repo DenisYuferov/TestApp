@@ -1,6 +1,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using TestApp.Domain.Model.Authorizations;
 using TestApp.Domain.Model.Commands.Authors;
 using TestApp.Domain.Model.Queries.Authors;
 
@@ -18,6 +19,7 @@ namespace TestApp.WebApi.Controllers
             _sender = sender ?? throw new ArgumentNullException(nameof(sender));
         }
 
+        [Authorize(Roles = RoleLevelSets.UserLevel)]
         [HttpGet("{id}")]
         public async Task<ActionResult> GetById(int id, CancellationToken cancellation)
         {
@@ -34,8 +36,9 @@ namespace TestApp.WebApi.Controllers
             var result = await _sender.Send(new GetAuthorsQuery(), cancellation);
 
             return Ok(result);
-        }        
+        }
 
+        [Authorize(Roles = RoleLevelSets.AdminLevel)]
         [HttpPost]
         public async Task<ActionResult> Add([FromBody] AddAuthorCommand command, CancellationToken cancellation)
         {
@@ -44,6 +47,7 @@ namespace TestApp.WebApi.Controllers
             return Ok(result);
         }
 
+        [Authorize(Roles = RoleLevelSets.AdminLevel)]
         [HttpPut]
         public async Task<ActionResult> Update([FromBody] UpdateAuthorCommand command, CancellationToken cancellation)
         {
@@ -52,6 +56,7 @@ namespace TestApp.WebApi.Controllers
             return Ok();
         }
 
+        [Authorize(Roles = RoleLevelSets.AdminLevel)]
         [HttpDelete]
         public async Task<ActionResult> Delete([FromBody] DeleteAuthorCommand command, CancellationToken cancellation)
         {

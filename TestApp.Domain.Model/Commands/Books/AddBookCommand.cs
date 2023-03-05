@@ -1,9 +1,9 @@
 ﻿using MediatR;
-using TestApp.Domain.Model.Views.Books;
+using TestApp.Domain.Model.Dtos.Books;
 
 namespace TestApp.Domain.Model.Commands.Books
 {
-    public class AddBookCommand : IRequest<AddBookView>
+    public class AddBookCommand : IRequest<AddBookDto>
     {
         public string? Title { get; set; }
         public string? Description { get; set; }

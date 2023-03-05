@@ -3,11 +3,11 @@ using MediatR;
 using TestApp.Domain.Abstraction.UnitOfWorks;
 using TestApp.Domain.Model.Commands.Books;
 using TestApp.Domain.Model.Entities;
-using TestApp.Domain.Model.Views.Books;
+using TestApp.Domain.Model.Dtos.Books;
 
 namespace TestApp.Domain.Handlers.Books
 {
-    public class AddBookCommandHandler : IRequestHandler<AddBookCommand, AddBookView>
+    public class AddBookCommandHandler : IRequestHandler<AddBookCommand, AddBookDto>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -19,7 +19,7 @@ namespace TestApp.Domain.Handlers.Books
             _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
-        public async Task<AddBookView> Handle(AddBookCommand request, CancellationToken cancellation)
+        public async Task<AddBookDto> Handle(AddBookCommand request, CancellationToken cancellation)
         {
             var book = _mapper.Map<Book>(request);
 
@@ -27,7 +27,7 @@ namespace TestApp.Domain.Handlers.Books
 
             await _unitOfWork.SaveAsync();
 
-            return _mapper.Map<AddBookView>(entity);
+            return _mapper.Map<AddBookDto>(entity);
         }
     }
 }

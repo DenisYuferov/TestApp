@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using TestApp.Domain.Model.Commands.Authors;
+using TestApp.Domain.Model.Dtos.Authors;
 using TestApp.Domain.Model.Entities;
-using TestApp.Domain.Model.Views.Authors;
 
 namespace TestApp.Domain.Mappers
 {
@@ -13,9 +13,9 @@ namespace TestApp.Domain.Mappers
             CreateMap<UpdateAuthorCommand, Author>();
             CreateMap<DeleteAuthorCommand, Author>();
 
-            CreateMap<Author, AddAuthorView>();
-            CreateMap<Author, GetAuthorView>();
-            CreateMap<Author, GetAuthorWithBooksView>();
+            CreateMap<Author, AddAuthorDto>();
+            CreateMap<Author, GetAuthorDto>();
+            CreateMap<Author, GetAuthorWithBooksDto>();
         }
     }
 }

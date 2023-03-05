@@ -1,9 +1,9 @@
 ﻿using MediatR;
-using TestApp.Domain.Model.Views.Authors;
+using TestApp.Domain.Model.Dtos.Authors;
 
 namespace TestApp.Domain.Model.Queries.Authors
 {
-    public class GetAuthorsQuery : IRequest<List<GetAuthorView>>
+    public class GetAuthorsQuery : IRequest<List<GetAuthorDto>>
     {
     }
 }

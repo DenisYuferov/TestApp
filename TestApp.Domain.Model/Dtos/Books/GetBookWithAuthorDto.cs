@@ -1,6 +1,6 @@
-﻿namespace TestApp.Domain.Model.Views.Books
+﻿namespace TestApp.Domain.Model.Dtos.Books
 {
-    public class GetBookWithAuthorView
+    public class GetBookWithAuthorDto
     {
         public int Id { get; set; }
         public string? Title { get; set; }

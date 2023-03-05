@@ -1,8 +1,8 @@
-﻿using TestApp.Domain.Model.Views.Books;
+﻿using TestApp.Domain.Model.Dtos.Books;
 
-namespace TestApp.Domain.Model.Views.Authors
+namespace TestApp.Domain.Model.Dtos.Authors
 {
-    public class GetAuthorWithBooksView
+    public class GetAuthorWithBooksDto
     {
         public int Id { get; set; }
         public int Age { get; set; }
@@ -10,6 +10,6 @@ namespace TestApp.Domain.Model.Views.Authors
         public string? LastName { get; set; }
         public string? Phone { get; set; }
 
-        public List<GetBookView>? Books { get; set; }
+        public List<GetBookDto>? Books { get; set; }
     }
 }

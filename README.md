@@ -7,7 +7,7 @@
 - Authentication:
   - JwtBearerToken
 - Authorization:
-  - ...
+  - IdentityServer
 - MessageQueues:
   - ...
   - ...</pre>
