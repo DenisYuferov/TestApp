@@ -1,13 +1,13 @@
 # TestApp
 <p>.Net 7 web api service by Clean Architecture
 <pre>- Databases:
-	- InMemory
-	- Postgre
-	- ...
+  - InMemory
+  - Postgre
+  - ...
 - Authentication:
-	- JwtBearerToken
+  - JwtBearerToken
 - Authorization:
-	- ...
+  - ...
 - MessageQueues:
-	- ...
-	- ...</pre>
+  - ...
+  - ...</pre>
