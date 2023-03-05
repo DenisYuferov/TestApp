@@ -1,6 +1,6 @@
 # TestApp
 <p>.Net 7 web api service by Clean Architecture
-- Databases:
+<pre>- Databases:
 	- InMemory
 	- Postgre
 	- ...
