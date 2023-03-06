@@ -2,7 +2,7 @@
 {
     public class RoleLevelSets
     {
-        public const string AdminLevel = $"{Roles.Admin}, {Roles.User}";
-        public const string UserLevel = $"{Roles.User}";
+        public const string AdminLevel = $"{Roles.Admin}";
+        public const string UserLevel = $"{Roles.Admin}, {Roles.User}";
     }
 }
