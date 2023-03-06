@@ -1,5 +1,7 @@
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using TestApp.Domain;
 using TestApp.Infrastructure;
+using TestApp.Infrastructure.Loggers;
 
 namespace TestApp.WebApi
 {
@@ -9,6 +11,9 @@ namespace TestApp.WebApi
         {
             var builder = WebApplication.CreateBuilder(args);
             
+            builder.Logging.ClearProviders();
+            builder.Logging.Services.TryAddEnumerable(ServiceDescriptor.Singleton<ILoggerProvider, JsonLoggerProvider>());
+
             builder.Services.AddTestAppInfrastructure(builder.Configuration);
             builder.Services.AddTestAppDomain();
 

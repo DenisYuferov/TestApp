@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Microsoft.Extensions.Logging;
 using TestApp.Domain.Abstraction.UnitOfWorks;
 using TestApp.Domain.Model.Dtos.Authors;
 using TestApp.Domain.Model.Queries.Authors;
@@ -16,7 +17,7 @@ namespace TestApp.Domain.Handlers.Authors
             IMapper mapper)
         {
             _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
-            _mapper = mapper;
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
         public async Task<List<GetAuthorDto>> Handle(GetAuthorsQuery request, CancellationToken cancellation)
         {
