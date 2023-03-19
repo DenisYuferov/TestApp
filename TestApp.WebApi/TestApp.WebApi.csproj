@@ -11,20 +11,12 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="SharedCore.Infrastructure" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\TestApp.Domain\TestApp.Domain.csproj" />
     <ProjectReference Include="..\TestApp.Infrastructure\TestApp.Infrastructure.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="SharedInfrastructure">
-      <HintPath>..\..\SharedInfrastructure\SharedInfrastructure\bin\Release\net7.0\SharedInfrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="SharedInfrastructure.Model">
-      <HintPath>..\..\SharedInfrastructure\SharedInfrastructure\bin\Release\net7.0\SharedInfrastructure.Model.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>

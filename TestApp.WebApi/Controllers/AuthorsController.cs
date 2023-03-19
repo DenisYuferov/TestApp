@@ -3,7 +3,8 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-using SharedInfrastructure.Model.Authorizations;
+using SharedCore.Model.Authorizations;
+
 using TestApp.Domain.Model.CQRS.Commands.Authors;
 using TestApp.Domain.Model.CQRS.Queries.Authors;
 

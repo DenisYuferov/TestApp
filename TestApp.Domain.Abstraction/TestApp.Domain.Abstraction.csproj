@@ -7,13 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TestApp.Domain.Model\TestApp.Domain.Model.csproj" />
+    <PackageReference Include="SharedCore.Domain.Abstraction" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="SharedCore.Domain.Abstraction">
-      <HintPath>..\..\SharedCore\SharedCore.Infrastructure\bin\Release\net7.0\SharedCore.Domain.Abstraction.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\TestApp.Domain.Model\TestApp.Domain.Model.csproj" />
   </ItemGroup>
 
 </Project>

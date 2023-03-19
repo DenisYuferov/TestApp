@@ -8,12 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="12.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="SharedCore.Model">
-      <HintPath>..\..\SharedCore\SharedCore.Infrastructure\bin\Release\net7.0\SharedCore.Model.dll</HintPath>
-    </Reference>
+    <PackageReference Include="SharedCore.Model" Version="1.0.0" />
   </ItemGroup>
 
 </Project>

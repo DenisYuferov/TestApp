@@ -1,4 +1,4 @@
-using SharedInfrastructure.Extensions;
+using SharedCore.Infrastructure.Extensions;
 
 using TestApp.Infrastructure;
 
