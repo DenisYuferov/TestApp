@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.4" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TestApp.Domain.Abstraction\TestApp.Domain.Abstraction.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="SharedCore.Domain.Abstraction">
+      <HintPath>..\..\SharedCore\SharedCore.Infrastructure\bin\Release\net7.0\SharedCore.Domain.Abstraction.dll</HintPath>
+    </Reference>
+    <Reference Include="SharedCore.Infrastructure">
+      <HintPath>..\..\SharedCore\SharedCore.Infrastructure\bin\Release\net7.0\SharedCore.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="SharedCore.Model">
+      <HintPath>..\..\SharedCore\SharedCore.Infrastructure\bin\Release\net7.0\SharedCore.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="SharedCore.Model.Abstraction">
+      <HintPath>..\..\SharedCore\SharedCore.Infrastructure\bin\Release\net7.0\SharedCore.Model.Abstraction.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using TestApp.Domain.Model.Commands.Authors;
-using TestApp.Domain.Model.Dtos.Authors;
-using TestApp.Domain.Model.Entities;
+using TestApp.Domain.Model.CQRS.Commands.Authors;
+using TestApp.Domain.Model.CQRS.Dtos.Authors;
+using TestApp.Domain.Model.Postgre.Entities;
 
 namespace TestApp.Domain.Mappers
 {

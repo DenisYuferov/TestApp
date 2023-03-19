@@ -11,7 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TestApp.Domain.Model.Abstraction\TestApp.Domain.Model.Abstraction.csproj" />
+    <Reference Include="SharedCore.Model">
+      <HintPath>..\..\SharedCore\SharedCore.Infrastructure\bin\Release\net7.0\SharedCore.Model.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

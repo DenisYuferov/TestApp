@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
-using TestApp.Domain.Abstraction.UnitOfWorks;
-using TestApp.Domain.Model.Commands.Books;
+using TestApp.Domain.Abstraction.Postgre.UnitOfWorks;
+using TestApp.Domain.Model.CQRS.Commands.Books;
 
 namespace TestApp.Domain.Handlers.Books
 {

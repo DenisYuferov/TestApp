@@ -8,14 +8,17 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
     <PackageReference Include="FluentValidation" Version="11.5.1" />
-    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.5.1" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\TestApp.Domain.Abstraction\TestApp.Domain.Abstraction.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="SharedCore.Domain.Abstraction">
+      <HintPath>..\..\SharedCore\SharedCore.Infrastructure\bin\Release\net7.0\SharedCore.Domain.Abstraction.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

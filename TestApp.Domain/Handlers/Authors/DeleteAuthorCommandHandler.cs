@@ -1,6 +1,6 @@
 ﻿using MediatR;
-using TestApp.Domain.Abstraction.UnitOfWorks;
-using TestApp.Domain.Model.Commands.Authors;
+using TestApp.Domain.Abstraction.Postgre.UnitOfWorks;
+using TestApp.Domain.Model.CQRS.Commands.Authors;
 
 namespace TestApp.Domain.Handlers.Authors
 {

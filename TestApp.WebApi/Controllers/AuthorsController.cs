@@ -1,9 +1,11 @@
 using MediatR;
+
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using TestApp.Domain.Model.Authorizations;
-using TestApp.Domain.Model.Commands.Authors;
-using TestApp.Domain.Model.Queries.Authors;
+
+using SharedInfrastructure.Model.Authorizations;
+using TestApp.Domain.Model.CQRS.Commands.Authors;
+using TestApp.Domain.Model.CQRS.Queries.Authors;
 
 namespace TestApp.WebApi.Controllers
 {

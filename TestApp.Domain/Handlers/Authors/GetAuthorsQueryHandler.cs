@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
+
 using MediatR;
-using Microsoft.Extensions.Logging;
-using TestApp.Domain.Abstraction.UnitOfWorks;
-using TestApp.Domain.Model.Dtos.Authors;
-using TestApp.Domain.Model.Queries.Authors;
+
+using TestApp.Domain.Abstraction.Postgre.UnitOfWorks;
+using TestApp.Domain.Model.CQRS.Dtos.Authors;
+using TestApp.Domain.Model.CQRS.Queries.Authors;
 
 namespace TestApp.Domain.Handlers.Authors
 {

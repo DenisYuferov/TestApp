@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -8,6 +8,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TestApp.Domain.Model\TestApp.Domain.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="SharedCore.Domain.Abstraction">
+      <HintPath>..\..\SharedCore\SharedCore.Infrastructure\bin\Release\net7.0\SharedCore.Domain.Abstraction.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
