@@ -3,18 +3,18 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 
-using TestApp.Infrastructure.Postgre.DbContexts;
-using TestApp.Infrastructure.Postgre.Options;
+using TestApp.Infrastructure.PostgreDb.Contexts;
+using TestApp.Infrastructure.PostgreDb.Options;
 
-namespace TestApp.Infrastructure.Postgre
+namespace TestApp.Infrastructure.PostgreDb
 {
     public static class WebApplicationExtensions
     {
-        public static void UsePostgreInfrastructure(this WebApplication application)
+        public static void UsePostgreDbInfrastructure(this WebApplication application)
         {
             using (var serviceScope = application.Services.CreateScope())
             {
-                var context = serviceScope.ServiceProvider.GetService<PostgreDbContext>();
+                var context = serviceScope.ServiceProvider.GetService<TestAppDbContext>();
 
                 var databaseOptions = serviceScope.ServiceProvider.GetService<IOptions<DatabaseOptions>>();
                 if (databaseOptions?.Value.InMemory == true)

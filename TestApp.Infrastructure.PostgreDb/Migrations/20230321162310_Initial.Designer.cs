@@ -2,18 +2,21 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using TestApp.Infrastructure.Postgre.DbContexts;
+using TestApp.Infrastructure.PostgreDb.Contexts;
 
 #nullable disable
 
-namespace TestApp.Infrastructure.Postgre.Migrations
+namespace TestApp.Infrastructure.PostgreDb.Migrations
 {
-    [DbContext(typeof(PostgreDbContext))]
-    partial class PostgreDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(TestAppDbContext))]
+    [Migration("20230321162310_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,7 +25,7 @@ namespace TestApp.Infrastructure.Postgre.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("TestApp.Domain.Model.Postgre.Entities.Author", b =>
+            modelBuilder.Entity("TestApp.Domain.Model.PostgreDb.Entities.Author", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -61,7 +64,7 @@ namespace TestApp.Infrastructure.Postgre.Migrations
                         });
                 });
 
-            modelBuilder.Entity("TestApp.Domain.Model.Postgre.Entities.Book", b =>
+            modelBuilder.Entity("TestApp.Domain.Model.PostgreDb.Entities.Book", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -109,9 +112,9 @@ namespace TestApp.Infrastructure.Postgre.Migrations
                         });
                 });
 
-            modelBuilder.Entity("TestApp.Domain.Model.Postgre.Entities.Book", b =>
+            modelBuilder.Entity("TestApp.Domain.Model.PostgreDb.Entities.Book", b =>
                 {
-                    b.HasOne("TestApp.Domain.Model.Postgre.Entities.Author", "Author")
+                    b.HasOne("TestApp.Domain.Model.PostgreDb.Entities.Author", "Author")
                         .WithMany("Books")
                         .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -120,7 +123,7 @@ namespace TestApp.Infrastructure.Postgre.Migrations
                     b.Navigation("Author");
                 });
 
-            modelBuilder.Entity("TestApp.Domain.Model.Postgre.Entities.Author", b =>
+            modelBuilder.Entity("TestApp.Domain.Model.PostgreDb.Entities.Author", b =>
                 {
                     b.Navigation("Books");
                 });

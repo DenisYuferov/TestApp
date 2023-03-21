@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 
-using TestApp.Infrastructure.Postgre;
+using TestApp.Infrastructure.PostgreDb;
 
 namespace TestApp.Infrastructure
 {
@@ -8,7 +8,7 @@ namespace TestApp.Infrastructure
     {
         public static void UseTestAppInfrastructure(this WebApplication application)
         {
-            application.UsePostgreInfrastructure();
+            application.UsePostgreDbInfrastructure();
         }
     }
 }

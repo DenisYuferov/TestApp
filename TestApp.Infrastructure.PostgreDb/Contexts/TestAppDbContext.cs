@@ -1,17 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-using TestApp.Domain.Model.Postgre.Entities;
-using TestApp.Domain.Model.Postgre.Seeds;
+using TestApp.Domain.Model.PostgreDb.Entities;
+using TestApp.Domain.Model.PostgreDb.Seeds;
 
-namespace TestApp.Infrastructure.Postgre.DbContexts
+namespace TestApp.Infrastructure.PostgreDb.Contexts
 {
-    // Add-Migration Initial -StartupProject TestApp.WebApi -Project TestApp.Infrastructure.Postgre
-    public class PostgreDbContext : DbContext
+    // Add-Migration Initial -StartupProject TestApp.WebApi -Project TestApp.Infrastructure.PostgreDb
+    public class TestAppDbContext : DbContext
     {
         public DbSet<Author> Authors { get; set; }
         public DbSet<Book> Books { get; set; }
 
-        public PostgreDbContext(DbContextOptions<PostgreDbContext> options)
+        public TestAppDbContext(DbContextOptions<TestAppDbContext> options)
             : base(options)
         {
 

@@ -1,6 +1,6 @@
 ﻿using SharedCore.Model.Entities;
 
-namespace TestApp.Domain.Model.Postgre.Entities
+namespace TestApp.Domain.Model.PostgreDb.Entities
 {
     public class Author : EntityBase<int>
     {

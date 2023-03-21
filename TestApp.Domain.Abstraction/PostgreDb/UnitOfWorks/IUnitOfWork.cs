@@ -1,6 +1,6 @@
-﻿using TestApp.Domain.Abstraction.Postgre.Repositories;
+﻿using TestApp.Domain.Abstraction.PostgreDb.Repositories;
 
-namespace TestApp.Domain.Abstraction.Postgre.UnitOfWorks
+namespace TestApp.Domain.Abstraction.PostgreDb.UnitOfWorks
 {
     public interface IUnitOfWork
     {

@@ -9,9 +9,9 @@
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
-
+  
   <ItemGroup>
-    <ProjectReference Include="..\TestApp.Infrastructure.Postgre\TestApp.Infrastructure.Postgre.csproj" />
+    <ProjectReference Include="..\TestApp.Infrastructure.PostgreDb\TestApp.Infrastructure.PostgreDb.csproj" />
   </ItemGroup>
 
 </Project>

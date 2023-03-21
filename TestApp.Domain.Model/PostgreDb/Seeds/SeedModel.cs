@@ -1,6 +1,6 @@
-﻿using TestApp.Domain.Model.Postgre.Entities;
+﻿using TestApp.Domain.Model.PostgreDb.Entities;
 
-namespace TestApp.Domain.Model.Postgre.Seeds
+namespace TestApp.Domain.Model.PostgreDb.Seeds
 {
     public class SeedModel
     {

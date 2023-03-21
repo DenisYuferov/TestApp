@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
+
 using MediatR;
-using TestApp.Domain.Abstraction.Postgre.UnitOfWorks;
+
+using TestApp.Domain.Abstraction.PostgreDb.UnitOfWorks;
 using TestApp.Domain.Model.CQRS.Commands.Authors;
 using TestApp.Domain.Model.CQRS.Dtos.Authors;
-using TestApp.Domain.Model.Postgre.Entities;
+using TestApp.Domain.Model.PostgreDb.Entities;
 
 namespace TestApp.Domain.Handlers.Authors
 {

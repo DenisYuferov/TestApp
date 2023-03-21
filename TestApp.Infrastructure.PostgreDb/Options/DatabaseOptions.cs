@@ -1,4 +1,4 @@
-﻿namespace TestApp.Infrastructure.Postgre.Options
+﻿namespace TestApp.Infrastructure.PostgreDb.Options
 {
     public class DatabaseOptions
     {

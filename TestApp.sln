@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp.Domain.Abstraction"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp.Domain.Model", "TestApp.Domain.Model\TestApp.Domain.Model.csproj", "{14B266CB-B530-4B10-A0A6-027CC54D974D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp.Infrastructure.Postgre", "TestApp.Infrastructure.Postgre\TestApp.Infrastructure.Postgre.csproj", "{0A899813-A6E6-4DF1-BA7E-12DF43547DFB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp.Infrastructure.PostgreDb", "TestApp.Infrastructure.PostgreDb\TestApp.Infrastructure.PostgreDb.csproj", "{70C02CB2-038F-474B-848D-843FC9971AAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{14B266CB-B530-4B10-A0A6-027CC54D974D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14B266CB-B530-4B10-A0A6-027CC54D974D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14B266CB-B530-4B10-A0A6-027CC54D974D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0A899813-A6E6-4DF1-BA7E-12DF43547DFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0A899813-A6E6-4DF1-BA7E-12DF43547DFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0A899813-A6E6-4DF1-BA7E-12DF43547DFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0A899813-A6E6-4DF1-BA7E-12DF43547DFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70C02CB2-038F-474B-848D-843FC9971AAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70C02CB2-038F-474B-848D-843FC9971AAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70C02CB2-038F-474B-848D-843FC9971AAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70C02CB2-038F-474B-848D-843FC9971AAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

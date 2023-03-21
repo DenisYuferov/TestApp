@@ -1,22 +1,22 @@
-﻿using TestApp.Domain.Abstraction.Postgre.Repositories;
-using TestApp.Domain.Abstraction.Postgre.UnitOfWorks;
-using TestApp.Infrastructure.Postgre.DbContexts;
+﻿using TestApp.Domain.Abstraction.PostgreDb.Repositories;
+using TestApp.Domain.Abstraction.PostgreDb.UnitOfWorks;
+using TestApp.Infrastructure.PostgreDb.Contexts;
 
-namespace TestApp.Infrastructure.Postgre.UnitOfWorks
+namespace TestApp.Infrastructure.PostgreDb.UnitOfWorks
 {
     public class UnitOfWork : IUnitOfWork
     {
         private readonly IAuthorRepository _authorRepository;
         private readonly IBookRepository _bookRepository;
 
-        private PostgreDbContext _context;
+        private TestAppDbContext _context;
         public IAuthorRepository AuthorRepository => _authorRepository;
         public IBookRepository BookRepository => _bookRepository;
 
         public UnitOfWork(
             IAuthorRepository authorRepository,
             IBookRepository bookRepository,
-            PostgreDbContext context)
+            TestAppDbContext context)
         {
             _authorRepository = authorRepository ?? throw new ArgumentNullException(nameof(authorRepository));
             _bookRepository = bookRepository ?? throw new ArgumentNullException(nameof(bookRepository));

@@ -2,15 +2,15 @@
 
 using SharedCore.Infrastructure.Repositories.EntityFramework;
 
-using TestApp.Domain.Abstraction.Postgre.Repositories;
-using TestApp.Domain.Model.Postgre.Entities;
-using TestApp.Infrastructure.Postgre.DbContexts;
+using TestApp.Domain.Abstraction.PostgreDb.Repositories;
+using TestApp.Domain.Model.PostgreDb.Entities;
+using TestApp.Infrastructure.PostgreDb.Contexts;
 
-namespace TestApp.Infrastructure.Postgre.Repositories
+namespace TestApp.Infrastructure.PostgreDb.Repositories
 {
     public class BookRepository : RepositoryBase<Book, int>, IBookRepository
     {
-        public BookRepository(PostgreDbContext context) : base(context)
+        public BookRepository(TestAppDbContext context) : base(context)
         {
 
         }

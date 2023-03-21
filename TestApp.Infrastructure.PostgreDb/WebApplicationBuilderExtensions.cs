@@ -3,18 +3,18 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-using TestApp.Domain.Abstraction.Postgre.Repositories;
-using TestApp.Domain.Abstraction.Postgre.UnitOfWorks;
-using TestApp.Infrastructure.Postgre.DbContexts;
-using TestApp.Infrastructure.Postgre.Options;
-using TestApp.Infrastructure.Postgre.Repositories;
-using TestApp.Infrastructure.Postgre.UnitOfWorks;
+using TestApp.Domain.Abstraction.PostgreDb.Repositories;
+using TestApp.Domain.Abstraction.PostgreDb.UnitOfWorks;
+using TestApp.Infrastructure.PostgreDb.Contexts;
+using TestApp.Infrastructure.PostgreDb.Options;
+using TestApp.Infrastructure.PostgreDb.Repositories;
+using TestApp.Infrastructure.PostgreDb.UnitOfWorks;
 
-namespace TestApp.Infrastructure.Postgre
+namespace TestApp.Infrastructure.PostgreDb
 {
     public static class WebApplicationBuilderExtensions
     {
-        public static void AddPostgreInfrastructure(this WebApplicationBuilder builder)
+        public static void AddPostgreDbInfrastructure(this WebApplicationBuilder builder)
         {
             AddDatabaseInfrastructure(builder.Services, builder.Configuration);
         }
@@ -28,7 +28,7 @@ namespace TestApp.Infrastructure.Postgre
             }
             else
             {
-                services.AddDbContext<PostgreDbContext>(opt => opt.UseNpgsql(databaseOptions?.Connection));
+                services.AddDbContext<TestAppDbContext>(opt => opt.UseNpgsql(databaseOptions?.Connection));
             }
 
             services.AddScoped<IAuthorRepository, AuthorRepository>();
@@ -53,7 +53,7 @@ namespace TestApp.Infrastructure.Postgre
                 .Split(";").First(cp => cp.Contains(DatabaseOptions.Database))
                 .Split("=").First(dp => !dp.Contains(DatabaseOptions.Database));
 
-            services.AddDbContext<PostgreDbContext>(opt => opt.UseInMemoryDatabase(dbName!));
+            services.AddDbContext<TestAppDbContext>(opt => opt.UseInMemoryDatabase(dbName!));
         }
     }
 }
