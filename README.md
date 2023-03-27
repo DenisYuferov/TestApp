@@ -9,7 +9,7 @@
 - Authorization:
   - IdentityServer
 - MessageQueues:
-  - ...
+  - RabbitMQ (With MassTransit)
   - ...
 - Logging:
   - JsonLogger

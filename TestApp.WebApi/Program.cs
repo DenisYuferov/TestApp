@@ -10,8 +10,10 @@ namespace TestApp.WebApi
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.AddSharedInfrastructure(AppDomain.CurrentDomain.Load("TestApp.Domain"));
-            builder.AddTestAppInfrastructure();
+            var domainAssembly = AppDomain.CurrentDomain.Load("TestApp.Domain");
+
+            builder.AddSharedInfrastructure(domainAssembly);
+            builder.AddTestAppInfrastructure(domainAssembly);
 
             var app = builder.Build();
 

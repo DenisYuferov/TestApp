@@ -11,6 +11,10 @@
   </ItemGroup>
   
   <ItemGroup>
+    <PackageReference Include="MassTransit.RabbitMQ" Version="8.0.14" />
+  </ItemGroup>
+  
+  <ItemGroup>
     <ProjectReference Include="..\TestApp.Infrastructure.PostgreDb\TestApp.Infrastructure.PostgreDb.csproj" />
   </ItemGroup>
 
