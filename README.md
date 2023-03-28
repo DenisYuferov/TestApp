@@ -4,13 +4,13 @@
   - InMemory
   - Postgre
   - ...
+  - ...
 - Authentication:
   - JwtBearerToken
 - Authorization:
   - IdentityServer
 - MessageQueues:
   - RabbitMQ (With MassTransit)
-  - ...
 - Logging:
   - JsonLogger
 </pre>
