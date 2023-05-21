@@ -17,21 +17,9 @@ namespace TestApp.Infrastructure.PostgreDb
                 var context = serviceScope.ServiceProvider.GetService<TestAppDbContext>();
 
                 var databaseOptions = serviceScope.ServiceProvider.GetService<IOptions<DatabaseOptions>>();
-                if (databaseOptions?.Value.InMemory == true)
-                {
-                    var seedModel = context?.GetSeedModel();
-
-                    context?.Books.Add(seedModel?.Books?[0]!);
-                    context?.Books.Add(seedModel?.Books?[1]!);
-
-                    context?.Authors.Add(seedModel?.Author!);
-
-                    context?.SaveChanges();
-                }
-                else
-                {
-                    context?.Database.Migrate();
-                }
+                
+                context?.Database.Migrate();
+                
             }
         }
     }

@@ -17,6 +17,7 @@ namespace TestApp.Infrastructure
         public static void AddTestAppInfrastructure(this WebApplicationBuilder builder, Assembly? domainAssembly = null)
         {
             builder.AddPostgreDbInfrastructure();
+            builder.AddMongoDbInfrastructure();
 
             AddMassTransit(builder, domainAssembly);
         }

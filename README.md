@@ -1,9 +1,8 @@
 # TestApp
 <p>.Net 7 web api service according to the Clean Architecture
 <pre>- Databases:
-  - InMemory
   - Postgre
-  - ...
+  - Mongo
   - ...
 - Authentication:
   - JwtBearerToken
@@ -13,4 +12,6 @@
   - RabbitMQ (With MassTransit)
 - Logging:
   - JsonLogger
+- Deployment:
+  - Dockerfile
 </pre>

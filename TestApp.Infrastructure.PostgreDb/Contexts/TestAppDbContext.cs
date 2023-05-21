@@ -55,7 +55,7 @@ namespace TestApp.Infrastructure.PostgreDb.Contexts
             modelBuilder.Entity<Book>().HasData(seedModel.Books?[1]!);
         }
 
-        public SeedModel GetSeedModel()
+        private SeedModel GetSeedModel()
         {
             var model = new SeedModel
             {

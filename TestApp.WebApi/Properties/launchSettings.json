@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "http": {
+    "TestAppHttp": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
@@ -19,7 +19,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "https": {
+    "TestAppHttps": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
@@ -32,21 +32,16 @@
         "Jwt__Issuer": "TestAuth.WebApi",
         "Jwt__Audience": "TestApps",
         //
-        "Database__InMemory": "false",
-        "Database__Connection": "Host=localhost;Port=5432;Database=TestApp;Username=postgres;Password=postgres",
+        "Postgre__Connection": "Host=localhost;Port=5432;Database=TestApp;Username=postgres;Password=postgres",
+        //
+        "Mongo__Connection": "mongodb://root:mongo1234@localhost:27017",
+        "Mongo__DbName": "TestApp",
+        "Mongo__BooksCollection": "Books",
         //
         "MassTransit__Host": "localhost",
         "MassTransit__VirtualHost": "/",
         "MassTransit__Username": "rabbitmq",
         "MassTransit__Password": "rabbitmq1234"
-      }
-    },
-    "IIS Express": {
-      "commandName": "IISExpress",
-      "launchBrowser": true,
-      "launchUrl": "swagger",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
       }
     }
   }

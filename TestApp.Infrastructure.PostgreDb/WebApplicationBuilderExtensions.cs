@@ -22,14 +22,8 @@ namespace TestApp.Infrastructure.PostgreDb
         private static void AddDatabaseInfrastructure(IServiceCollection services, IConfiguration configuration)
         {
             var databaseOptions = ConfigureDatabaseOptions(services, configuration);
-            if (databaseOptions?.InMemory == true)
-            {
-                ConfigureInMemoryDatabase(services, databaseOptions);
-            }
-            else
-            {
-                services.AddDbContext<TestAppDbContext>(opt => opt.UseNpgsql(databaseOptions?.Connection));
-            }
+            
+            services.AddDbContext<TestAppDbContext>(opt => opt.UseNpgsql(databaseOptions?.Connection));
 
             services.AddScoped<IAuthorRepository, AuthorRepository>();
             services.AddScoped<IBookRepository, BookRepository>();
@@ -39,21 +33,12 @@ namespace TestApp.Infrastructure.PostgreDb
 
         private static DatabaseOptions? ConfigureDatabaseOptions(IServiceCollection services, IConfiguration configuration)
         {
-            var databaseSection = configuration.GetSection(DatabaseOptions.Database);
+            var databaseSection = configuration.GetSection(DatabaseOptions.SectionName);
             services.Configure<DatabaseOptions>(databaseSection);
 
             var databaseOptions = databaseSection.Get<DatabaseOptions>();
 
             return databaseOptions;
-        }
-
-        private static void ConfigureInMemoryDatabase(IServiceCollection services, DatabaseOptions databaseOptions)
-        {
-            var dbName = databaseOptions?.Connection?
-                .Split(";").First(cp => cp.Contains(DatabaseOptions.Database))
-                .Split("=").First(dp => !dp.Contains(DatabaseOptions.Database));
-
-            services.AddDbContext<TestAppDbContext>(opt => opt.UseInMemoryDatabase(dbName!));
         }
     }
 }

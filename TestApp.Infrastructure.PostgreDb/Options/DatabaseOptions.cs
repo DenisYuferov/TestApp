@@ -2,9 +2,7 @@
 {
     public class DatabaseOptions
     {
-        public const string Database = "Database";
-
-        public bool? InMemory { get; set; }
+        public const string SectionName = "Postgre";
         public string? Connection { get; set; }
     }
 }

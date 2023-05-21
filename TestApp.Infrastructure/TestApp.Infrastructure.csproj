@@ -15,6 +15,7 @@
   </ItemGroup>
   
   <ItemGroup>
+    <ProjectReference Include="..\TestApp.Infrastructure.MongoDb\TestApp.Infrastructure.MongoDb.csproj" />
     <ProjectReference Include="..\TestApp.Infrastructure.PostgreDb\TestApp.Infrastructure.PostgreDb.csproj" />
   </ItemGroup>
 
