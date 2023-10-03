@@ -16,3 +16,4 @@
   - Dockerfile
 </pre>
 ![Image of Clean Architecture](CAV.jpg)
+<img src="CAV.jpg" width="128"/>
