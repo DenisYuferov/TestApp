@@ -15,5 +15,4 @@
 - Deployment:
   - Dockerfile
 </pre>
-![Image of Clean Architecture](CAV.jpg)
-<img src="CAV.jpg" width="128"/>
+<img src="CAV.jpg" width="800"/>
