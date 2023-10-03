@@ -15,4 +15,4 @@
 - Deployment:
   - Dockerfile
 </pre>
-![Image of Clean Architecture](https://github.com/DenisYuferov/TestApp/blob/main/CAV.jpg?raw=true)
+![Image of Clean Architecture](CAV.jpg)
