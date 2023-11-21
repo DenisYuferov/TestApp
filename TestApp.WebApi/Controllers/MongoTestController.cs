@@ -55,5 +55,10 @@ namespace TestApp.WebApi.Controllers
 
             return Ok();
         }
+
+        private void TestApp()
+        {
+
+        }
     }
 }
